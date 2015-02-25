@@ -62,7 +62,8 @@ def to_cube(pcaxis_data, origin_url=None, Sluger=Sluger):
 	dimensions = []
 	dim_sluger = Sluger()
 	for label, px_categories in px.values.iteritems():
-		if label in px.codes:
+		# if label in px.codes: # THIS MUST BE AN OVERSIGHT AS ABOVE PRECAUTIONS ARE TAKEN IN CASE px.codes DOESN'T EXIST
+		if label in codes:
 			cat_ids = codes[label]
 		else:
 			cat_sluger = Sluger()
